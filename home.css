@@ -1,0 +1,1128 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:rgb(206, 168, 182);
+}
+
+/* Header content */
+
+.header {
+  overflow: visible;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: row;
+  align-items:start;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  height: auto;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 5px 20px;
+}
+
+.header-title-text {
+  color: rgb(65, 7, 94);
+  margin-left: 30px;
+  font-size: 25px;
+  text-align: start;
+  margin-top: 5px;
+}
+
+.header-content {
+  display: flex;
+  gap: 50px;
+}
+
+.home-button,
+.rsvp-navigation,
+.entourage-button {
+  place-items: center;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  background: transparent;
+  color: rgb(65, 7, 94);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.home-button {
+  border-bottom: 2px solid #41075e;
+  font-weight: bold;
+}
+
+.entourage-button {
+  margin-right: 40px;
+}
+
+.hamburger{
+  color: rgb(65, 7, 94);
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Header responsive mobile screens */
+
+@media screen and (max-width: 480px) and (orientation: portrait){
+
+  .header{
+    padding: 5px 15px;
+    align-items: center;
+  }
+  
+  .header-title-text{
+    margin-left:0;
+    font-size: 20px;
+  }
+  .hamburger{
+    display: block;
+  }
+.header-content{
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 25px;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 8px;
+ background: rgba(255, 255, 255, 0.95);
+ box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+ }
+.header-content.active{
+  display: flex;
+}
+ .home-button,
+ .rsvp-navigation,
+ .entourage-button {
+  padding: 3px 5px;
+  font-size: 18px;
+ }
+ .entourage-button{
+  margin-right: 0;
+ }
+}
+
+/*Smaller Phone */
+
+@media screen and (max-width: 380px) and (orientation: portrait){
+ .header{
+  padding: 5px 10px;
+ } 
+
+ .header-title-text{
+  font-size: 12px;
+ }
+ .hamburger{
+  font-size: 24px;
+ }
+
+ .header-content{
+  right: 10px;
+ }
+}
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+ .header{
+    padding: 5px 15px;
+    align-items: center;
+  }
+  
+  .header-title-text{
+    margin-left:0;
+    font-size: 22px;
+  }
+  .hamburger{
+    display: block;
+  }
+.header-content{
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 25px;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 8px;
+ background: rgba(255, 255, 255, 0.95);
+ box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+ }
+.header-content.active{
+  display: flex;
+}
+ .home-button,
+ .rsvp-navigation,
+ .entourage-button {
+  padding: 3px 5px;
+  font-size: 20px;
+ }
+ .entourage-button{
+  margin-right: 0;
+ }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
+  .header-title-text{
+    font-size: 20px;
+  }
+  .home-button,
+  .entourage-button,
+  .rsvp-navigation{
+    font-size: 20px;
+  }
+}
+
+
+/* Music Button*/
+.music-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #5f1158;
+  color: rgb(95, 17, 88);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999 !important;
+  box-shadow: 0 0 15px rgba(95, 17, 88, 0.4);
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(95, 17, 88, 0.35);
+  box-shadow: 0 0 25px rgba(95, 17, 88, 0.5);
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+.music-btn .music-icon,
+.music-btn .mute-icon {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+/* Pulsing animation when music is playing */
+.music-btn.playing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(95, 17, 88, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
+  }
+}
+
+/* Mobile responsive for music button */
+@media screen and (max-width: 768px) {
+  .music-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .music-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .music-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/*banner content*/
+
+.banner {
+  display: grid;
+  grid-template-columns: 100%;
+  margin: auto 0 0 0;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  border: none;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 30px 0 20px 0;
+  overflow: visible;
+  background-color: rgb(227, 202, 255);
+  background-image: url('lowerring.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  /*box-shadow: 0px 12px 50px rgba(169, 165, 165, 0.8);*/
+}
+
+
+.banner__container {
+  display: grid;
+  width: 100%;
+  padding: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.banner__wording__container {
+  width: 1fr;
+  height: auto;
+  text-align: center;
+  align-items: center;
+  margin-top: none;
+}
+
+.banner__wording__container h1{
+  transform: translateY(-25px);
+  font-weight: 500;
+  font-size: 30px;
+   color: rgb(99, 98, 98);
+  text-shadow:
+    inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.banner__name{
+  transform: translateY(-10px);
+  margin-top: -20px;
+  margin-bottom: auto;
+  font-size: 80px;
+  color: rgb(95, 17, 88);
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.banner__button {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 250px;
+}
+
+.button__rsvp,
+.button__entourage {
+  background-color: rgba(95, 17, 88, 0.15);
+  backdrop-filter: blur(5px);
+  border: solid 2px rgb(95, 17, 88);
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: rgb(95, 17, 88);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button__rsvp:hover,
+.button__entourage:hover {
+  transform: scale(1.05);
+}
+
+
+.banner__wording,
+.banner__verse {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  text-shadow: 0 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.banner__wording{
+  margin-top: 25px;
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: rgb(58, 58, 58);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  margin-left: 2px;
+  margin-right: 2px;
+  margin: auto;
+}
+
+.banner__verse {
+  font-size: 25px;
+  margin-top: 2px;
+  color: rgb(98, 94, 98);
+}
+
+/* Banner Mobile responsive screen*/
+
+@media screen and (max-width: 480px) and (orientation: portrait){
+
+  .banner{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    aspect-ratio: 2/3;
+   height: auto;
+    box-sizing: border-box;
+
+   background: url('mobilebanner.webp');
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-position: center;
+  }
+.banner__container{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.banner__wording__container{
+  width: 100%;
+  text-align: center;
+}
+.banner__wording__container h1{
+  font-size: 23px;
+}
+.banner__wording__container:first-child{
+transform: translateY(-50px);
+}
+.banner__wording__container:last-child{
+  transform: translateY(50px);
+}
+.banner__name{
+font-size: 50px;
+}
+
+.banner__button{
+ width: 100%;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ gap: 50px;
+ box-sizing: border-box;
+ transform: translateY(-32px);
+}
+
+.button__rsvp,
+.button__entourage{
+  font-size: 16px;
+}
+.banner__wording,
+.banner__verse{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+}
+}
+
+
+/*Smaller Phone */
+
+@media screen and (max-width: 380px) and (orientation: portrait){
+ 
+}
+
+@media screen and (max-width: 667px) and (orientation: landscape){
+  
+}
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+
+   .banner{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    aspect-ratio: 2/3;
+   height: auto;
+    box-sizing: border-box;
+
+   background: url('mobilebanner.webp');
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-position: center;
+  }
+.banner__container{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.banner__wording__container{
+  width: 100%;
+  text-align: center;
+}
+
+.banner__wording__container h1{
+  font-size: 40px;
+}  
+.banner__wording__container:first-child{
+transform: translateY(-200px);
+}
+.banner__wording__container:last-child{
+  transform: translateY(100px);
+}
+.banner__name{
+font-size: 90px;
+margin-top: 30px;
+}
+
+.banner__button{
+ width: 100%;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ gap: 150px;
+ font-size:100px;
+ transform: translateY(-120px);
+}
+.banner__wording,
+.banner__verse{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.banner__wording{
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+.banner__verse{
+  font-size: 23px;
+  
+}
+}
+
+
+/* ABOUT THE WEDDING */
+
+.about__wedding {
+  align-items: start;
+  text-align: center;
+  border: none;
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.wedding__container {
+  background-color: rgba(228, 201, 212, 0.915);
+  box-shadow: inset 1px 1px 10px -5px black;
+  padding: 12px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.wedding__container h1.s-l-header{
+   color: rgb(95, 17, 88);
+  text-shadow:
+    inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+   font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  font-size: 38px;
+}
+
+.about__par{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: auto;
+}
+.about__par__description{
+  font-size: 20px;
+  letter-spacing: -1px;
+   color: rgb(123, 122, 122);
+    margin-top: -15px;
+   font-family: "Montserrat", sans-serif;
+}
+.event__container {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.date,
+.location {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.event__date__container,
+.event__location__container {
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(214, 169, 196, 0.956);
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 0;
+  width: 100%;
+  max-width: 450px;
+  max-height: 100%;
+  height: auto;
+  text-align: start;
+  padding: .8em;
+  box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+  box-sizing: border-box;
+}
+
+.icon__date,
+.icon__location {
+  display: flex;
+  margin: 0%;
+}
+
+.date__container,
+.location__container {
+  padding-top: .5em;
+  font-size: 1rem;
+}
+
+.date__container {
+  margin: 0;
+  width: 100%;
+}
+
+
+.location__container h1 {
+  color: rgb(39, 1, 25);
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.date__container p {
+  margin: 0 0 8px 0;
+  color: rgb(39, 1, 25);
+  min-height: 19px;
+  font-size: 1.3rem;
+}
+
+.date__container h1 {
+  clear: left;
+  float: left;
+  margin: 0 5px 8px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color:black;
+  line-height: 20px;
+}
+
+.location__container p {
+  text-align: center;
+  align-items: center;
+  color:rgb(95, 17, 88);
+  font-size: 1.3rem;
+}
+
+.calendar__border,
+.pin__border {
+  border-bottom: 1px solid rgb(85, 20, 115);
+}
+
+.calendar,
+.pin {
+  margin: auto;
+  margin-bottom: .3em;
+  padding: 0;
+  color:rgb(161, 79, 121);
+  display: block;
+  text-align: center;
+}
+.calendar__button{
+  margin-left: auto;
+  margin-right: auto;
+}
+.calendar__button,
+.open__location {
+  font-size: 1.35rem;
+  width: fit-content;
+  outline: none;
+  border: none;
+  border-radius: .5em;
+  color: rgb(255, 255, 255);
+  background-color:rgb(161, 79, 121);
+  text-align: center;
+  padding: 8px 12px;
+  margin: auto;
+  margin-top: 1em;
+  display: block;
+  cursor: pointer;
+  z-index: 0;
+  position: relative;
+  box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+}
+
+.calendar__button::before,
+.open__location::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  background-size: 600%;
+  background: linear-gradient(45deg, #8b65f4, #b79dff);
+  z-index: -1;
+  filter: blur(1px);
+  opacity: 0;
+  inset: 0;
+  border-radius: .5em;
+  transition: opacity .3s ease-in-out;
+  animation: glowing 20s linear infinite;
+}
+
+.open__location::before {
+  background: linear-gradient(45deg, #8b65f4, #78a2fc);
+}
+
+.calendar__button:hover,
+.open__location:hover {
+  color: rgb(85, 20, 115);
+  font-weight: bold;
+  width: 200px;
+}
+
+.calendar__button:hover::before,
+.open__location:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.calendar__button:active::after,
+.open__location:active::after {
+  background: transparent;
+}
+
+.calendar__button:active,
+.open__location:active {
+  color: rgb(85, 20, 115);
+  font-weight: bold;
+}
+
+.open__location {
+  text-decoration: none;
+  margin-top: 0;
+}
+
+/*About Wedding responsive screen */
+
+@media screen and (max-width: 480px){
+
+  .about__wedding{
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .wedding__container {
+   width: fit-content;
+   max-width: 100%;
+   margin: 0 auto;
+   box-sizing: border-box;
+  }
+
+  /* CHANGED: Schedule & Location */
+  .wedding__container h1.s-l-header{
+    font-size: 23px;
+  }
+
+  .about__par__description{
+    font-size: 15px;
+  }
+
+  .event__container{
+    flex-direction: column;
+    align-items: center;
+    gap: .9em;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .event__date__container,
+  .event__location__container {
+    max-width: 450px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .date__container,
+  .location__container{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  .date__container p{
+    font-size: .9rem;
+  }
+
+  .calendar__button,
+  .open__location{
+    font-size: 1rem;
+  }
+
+  /* CHANGED: Ceremony & Reception */
+  .location__container h1{
+    font-size: 15px;
+  }
+}
+
+
+/*Smaller Phone */
+
+@media screen and (max-width: 380px) and (orientation: portrait){
+ 
+  .about__wedding{
+    width: 95%;
+  }
+
+  .wedding__container{
+    padding: 10px;
+  }
+
+  .wedding__container h1{
+    font-size: 22px;
+  }
+
+  .date__container,
+  .location__container{
+    font-size: .9rem;
+  }
+
+  .date__container h1 {
+    font-size: .9rem;
+  }
+
+  .location__container p{
+    font-size: .9rem;
+  }
+
+}
+
+@media screen and (max-width: 667px) and (orientation: landscape){
+  
+}
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+
+  .about__wedding{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wedding__container {
+   width: fit-content;
+   max-width: 100%;
+   margin: 0 auto;
+   box-sizing: border-box;
+  }
+
+  .event__container{
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .event__date__container,
+  .event__location__container {
+    max-width: 450px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .date__container,
+  .location__container{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
+  
+}
+
+/*gallery*/
+
+.main__container {
+  align-items: start;
+  text-align: center;
+  border: none;
+  width: 95%;
+  max-height: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.inner__container {
+  background-color: rgba(228, 201, 212, 0.915);
+  box-shadow: inset 1px 1px 10px -5px black;
+  padding: 10px;
+  height: 90%;
+}
+
+.inner__container h1 {
+ font-weight: 500;
+  font-size: 38px;
+   font-family: "Great Vibes", cursive;
+  color: rgb(95, 17, 88);
+  margin-bottom: 20px;
+  display: block;
+}
+
+
+.gallery__par__description{
+  font-size: 20px;
+  letter-spacing: -1px;
+   color: rgb(123, 122, 122);
+    margin-top: -15px;
+   font-family: "Montserrat", sans-serif;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.gallery-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px -5px black;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width:481px){
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* CHANGED: Our Story */
+  .inner__container h1{
+    font-size: 23px;
+  }
+  .gallery__par__description{
+    font-size: 15px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*COUNTDOWN */
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 30px auto;
+  background-color: rgba(161, 79, 121,0.8);
+  border-radius: 8px;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.countdown h1 {
+  display: block;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+  color: rgb(246, 246, 246);
+  font-family: inherit;
+  font-size: 35px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.countdown-values {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.countdown-box {
+  text-align: center;
+  min-width: 80px;
+  padding: 12px;
+  padding-top: 14px;
+}
+
+.countdown-box span {
+  display: block;
+  width: 80px;
+  font-size: 60px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(206, 168, 182);
+  border-radius: 8px;
+}
+.countdown-box small {
+  display: block;
+  font-size: 18px;
+  color: white;
+}
+
+@media screen and (max-width:480px){
+  .countdown {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .countdown h1{
+    font-size: 25px;
+    max-width: 100%;
+  }
+
+  .countdown-values {
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box {
+    min-width: 0;
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box span{
+    width: 100%;
+    font-size: 30px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box small {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:780px) and (min-width:481px) {
+  .countdown {
+    width: calc(100% - 30px);
+    max-width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .countdown h1 {
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .countdown-values {
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box {
+    min-width: 0;
+    flex: 1;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box span {
+    width: 100%;
+    font-size: 50px;
+    box-sizing: border-box;
+  }
+
+  .countdown-box small {
+    font-size: 18px;
+  }
+}
