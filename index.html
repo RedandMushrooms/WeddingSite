@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="galleryslide.css">
+  <link rel="icon" type="image/png" href="./logo.png?v=2">
+  <title>Home B&J Wedding Website</title>
+</head>
+
+<body>
+
+<audio id="bg-audio" autoplay preload="auto" loop>
+  <source src="On This Day by David Pomeranz piano cover sheet music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="mamadiv">
+
+<div class="header">
+  <div class="left-title">
+    <h1 class="header-title-text">Bryan & Jerlyn's Wedding</h1>
+  </div>
+
+<button class="hamburger" id="hamburger" aria-label="Open Navigation Menu">
+    &#9776;
+</button>
+
+<div class="header-content">
+  <a href="index.html">
+    <button class="home-button">Home</button>
+  </a>
+  <a href="rsvp.html">
+    <button class="rsvp-navigation">RSVP</button>
+  </a> 
+  <a href="entourage.html">
+    <button class="entourage-button">Entourage</button>
+  </a>
+</div>
+</div>
+
+
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">
+    <img src="musicon.svg" class="music-icon" alt="Play music" width="28" height="28">
+    <img src="musicoff.svg" class="mute-icon" alt="Mute music" width="28" height="28" style="display:none;">
+  </button>
+
+</div>
+
+<div class="banner">
+  <div class="banner__container">
+    <div class="banner__wording__container">
+      <h1>Shared Hearts, One Promise</h1>
+      <p class="banner__name">Bryan & Jerlyn</p>
+    </div>
+
+    <div class="banner__button">
+      <a href="rsvp.html" target="_blank">
+        <button class="button__rsvp">Open RSVP</button>
+      </a>
+      <a href="entourage.html" target="_blank">
+        <button class="button__entourage">View Entourage</button>
+      </a>
+    </div>
+
+    <div class="banner__wording__container">
+      <p class="banner__wording">"Two together can take a stand. A threefold cord cannot quickly be torn apart"</p>
+      <p class="banner__verse">— Eccl. 4:12 —</p>
+    </div>
+  </div>
+</div>
+
+<div class="about__wedding">
+  <div class="wedding__container">
+    <h1 class="s-l-header">Schedule and Location</h1>
+    <div class="about">
+      <p class="about__par__description"> Tap the buttons to save the date or view the location.</p>
+    </div>
+    <div class="event__container">
+
+      <div class="event__date__container">
+        <div class="calendar__border">
+          <svg class="calendar" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0-2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1m7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg>
+        </div>
+        <div class="date">
+          <div class="date__container">
+            <h1>Date:</h1><p> December 28, 2026</p>
+            <h1>Ceremony:</h1><p> 10:00 AM</p>
+            <h1>Reception:</h1><p> 11:45 AM</p>
+            <button class="calendar__button" id="calendarLink">Save the Date</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="event__location__container">
+        <div class="pin__border">
+          <svg class="pin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+          </svg>
+        </div>
+        <div class="location">
+          <div class="location__container">
+            <h1>Ceremony & Reception:</h1> 
+            <p>Ang Hiraya ni Lina, Purok 7, Upper Sipi, Daraga Albay</p>
+          </div>
+          <div class="map">
+            <a class="open__location" href="https://maps.app.goo.gl/JznUkDXRsNGKNWqeA" target="_blank" rel="noopener noreferrer">
+              Get Location
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main__container">
+  <div class="inner__container">
+    <h1 class="story">Our Story,</h1>
+    <p class="gallery__par__description">Captured one beautiful moment at a time.</p>
+    <div class="gallery">
+      <div class="gallery-column">
+        <img src="img1.png" alt="">
+        <img src="img2.png" alt="">
+      </div>
+      <div class="gallery-column">
+        <img src="img3.png" id="img3" alt="">
+        <img src="img4.png" alt="">
+        <img src="img5.2.png" id="img52" alt="">
+      </div>
+      <div class="gallery-column">
+        <img src="img6.png" alt="">
+        <img src="img7.png" id="img7" alt="">
+        <img src="img8.2.png" id="img82" alt="">
+      </div>
+      <div class="gallery-column">
+        <img src="img9.png" alt="">
+        <img src="img10.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="countdown">
+  <h1>Counting Until The Day ♡ </h1>
+
+  <div class="countdown-values">
+
+    <div class="countdown-box">
+      <span id="months">0</span>
+      <small>Months</small>
+    </div>
+
+    <div class="countdown-box">
+      <span id="weeks">0</span>
+      <small>Weeks</small>
+    </div>
+
+    <div class="countdown-box">
+      <span id="days">0</span>
+      <small>Days</small>
+    </div>
+
+  </div>
+</div>
+
+<script src="savedate.js"></script>
+<script src="switchimage.js"></script>
+<script src="music.js"></script>
+<script src="navigation.js"></script>
+<script src="countdown.js"></script>
+</body>
+</html>

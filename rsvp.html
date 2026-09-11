@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Courgette&family=Dancing+Script&family=Great+Vibes&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rsvp.css">
+  <link rel="icon" type="image/png" href="./logo.png?v=2">
+  <title>RSVP B&J Wedding </title>
+</head>
+<body>
+  
+<audio id="bg-audio" autoplay preload="auto" loop>
+  <source src="On This Day by David Pomeranz piano cover sheet music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="header">
+  <div class="left-title">
+    <h1 class="header-title-text">Bryan & Jerlyn's Wedding</h1>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Open Navigation Menu">
+    &#9776;
+</button>
+<div class="header-content">
+  <a href="index.html">
+    <button class="home-button">Home</button>
+  </a>
+
+  <a href="rsvp.html">
+    <button class="rsvp-navigation">RSVP</button>
+  </a> 
+
+  <a href="entourage.html">
+    <button class="entourage-button">Entourage</button>
+  </a>
+</div>
+</div>
+
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">
+    <img src="musicon.svg" class="music-icon" alt="Play music" width="28" height="28">
+    <img src="musicoff.svg" class="mute-icon" alt="Mute music" width="28" height="28" style="display:none;">
+  </button>
+
+  <div class="heading__title">
+    <h1>RSVP</h1>
+    <p>Please fill up the RSVP below </p>
+    <div class="questionnaire__tub">
+      <iframe class="questionnaire" src="https://docs.google.com/forms/d/e/1FAIpQLSfym2hrV3GrJOwMaBQA5_NTEwR88VH25E788l2Bt4n79wh5-Q/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+<script src="navigation.js"></script>
+<script src="music.js"></script>
+</body>
+</html>

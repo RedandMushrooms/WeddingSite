@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entourage B&J Wedding </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download" />
+  <link rel="stylesheet" href="entourage.css">
+  <link rel="icon" type="image/png" href="./logo.png?v=2">
+</head>
+<body style="background: rgb(212, 176, 190);">
+
+
+<audio id="bg-audio" autoplay preload="auto" loop>
+  <source src="On This Day by David Pomeranz piano cover sheet music.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="header">
+  <div class="left-title">
+    <h1 class="header-title-text">Bryan & Jerlyn's Wedding</h1>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Open Navigation Menu">
+    &#9776;
+</button>
+<div class="header-content">
+  <a href="index.html">
+    <button class="home-button">Home</button>
+  </a>
+
+  <a href="rsvp.html">
+    <button class="rsvp-navigation">RSVP</button>
+  </a> 
+
+  <a href="entourage.html">
+    <button class="entourage-button">Entourage</button>
+  </a>
+</div>
+</div>
+
+
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">
+    <img src="musicon.svg" class="music-icon" alt="Play music" width="28" height="28">
+    <img src="musicoff.svg" class="mute-icon" alt="Mute music" width="28" height="28" style="display:none;">
+  </button>
+
+
+<div class="entourage">
+    <div class="group">
+      <img class="card" src="entourage-1-Recovered.jpg" alt="">
+      <img class="card" src="entourage-2-Recovered.jpg" alt="">
+      <img class="card" src="directors.jpg" alt="">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094</button>
+    <button class="next" onclick="nextSlide()">&#10095</button>
+  </div>
+
+  <div class="download">
+  <img src="entourage-1-Recovered.jpg" alt="Entourage Image 1">
+  <img src="entourage-2-Recovered.jpg" alt="Entourage Image 2">
+  <img src="directors.jpg" alt="Entourage Image 3">
+  </div>
+  <div class="button-margin">
+<p class="downloadText">Download Entourage
+   <button id="buttondownload"><span class="material-symbols-outlined">
+download
+</span></button>
+</p>
+  </div>
+
+ 
+
+<script src="download.js"></script>
+<script src="entourage.js"></script>
+<script src="navigation.js"></script>
+<script src="music.js"></script>
+</body>
+</html>

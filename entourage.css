@@ -1,0 +1,513 @@
+.body{
+  height:800px;
+max-width: 100%;
+margin: 0;
+padding-bottom: 150px;
+}
+
+/* Header content */
+
+.header {
+  overflow: visible;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: row;
+  align-items:start;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  height: auto;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 5px 20px;
+}
+
+.header-title-text {
+  color: rgb(65, 7, 94);
+  margin-left: 30px;
+  font-size: 25px;
+  text-align: start;
+  margin-top: 5px;
+}
+
+.header-content {
+  display: flex;
+  gap: 50px;
+}
+
+.home-button,
+.rsvp-navigation,
+.entourage-button {
+  place-items: center;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  background: transparent;
+  color: rgb(65, 7, 94);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.entourage-button {
+  border-bottom: 2px solid #41075e;
+  font-weight: bold;
+}
+
+.entourage-button {
+  margin-right: 40px;
+}
+
+.hamburger{
+  color: rgb(65, 7, 94);
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Header responsive mobile screens */
+
+@media screen and (max-width: 480px) and (orientation: portrait){
+
+  .header{
+    padding: 5px 15px;
+    align-items: center;
+  }
+  
+  .header-title-text{
+    margin-left:0;
+    font-size: 20px;
+  }
+
+  .hamburger{
+    display: block;
+  }
+
+  .header-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active{
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
+    font-size: 18px;
+  }
+
+  .entourage-button{
+    margin-right: 0;
+  }
+}
+
+/*Smaller Phone */
+
+@media screen and (max-width: 380px) and (orientation: portrait){
+
+  .header{
+    padding: 5px 10px;
+  } 
+
+  .header-title-text{
+    font-size: 12px;
+  }
+
+  .hamburger{
+    font-size: 24px;
+  }
+
+  .header-content{
+    right: 10px;
+  }
+}
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+
+  .header{
+    padding: 5px 15px;
+    align-items: center;
+  }
+  
+  .header-title-text{
+    margin-left:0;
+    font-size: 22px;
+  }
+
+  .hamburger{
+    display: block;
+  }
+
+  .header-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active{
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
+    font-size: 20px;
+  }
+
+  .entourage-button{
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
+
+  .header-title-text{
+    font-size: 20px;
+  }
+
+  .home-button,
+  .entourage-button,
+  .rsvp-navigation{
+    font-size: 20px;
+  }
+}
+
+/* Music Button*/
+.music-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #5f1158;
+  color: rgb(95, 17, 88);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999 !important;
+  box-shadow: 0 0 15px rgba(95, 17, 88, 0.4);
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(95, 17, 88, 0.35);
+  box-shadow: 0 0 25px rgba(95, 17, 88, 0.5);
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+.music-btn .music-icon,
+.music-btn .mute-icon {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+/* Pulsing animation when music is playing */
+.music-btn.playing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(95, 17, 88, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
+  }
+}
+
+/* Mobile responsive for music button */
+@media screen and (max-width: 768px) {
+  .music-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .music-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .music-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+/*Entourage*/
+
+.entourage{
+    position: relative;
+    width: 90%; 
+    max-width: 650px;
+    aspect-ratio: 4/5;
+    margin: 60px auto 0;
+  }
+
+.group{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+  }
+
+.card{
+    display: none;
+    width: 80%;
+    max-width:600px;
+    height: auto;
+    object-fit: contain;
+    border-radius: .2em;
+
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    translate: -50% 0;
+    transition: clip-path 1s ease;
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.8);
+  }
+
+.card.displayCard{
+    display: block;
+  }
+  
+.card:hover{
+      cursor: pointer;
+  }
+
+.entourage button{
+  position: absolute;
+  top: 20em;
+  transform: translateY(50%);
+  
+  z-index: 10;
+  font-size: 1rem;
+  border-radius:50%;
+  width: 40px;
+  height: 40px;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev{
+  left: 0;
+  box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+}
+
+.next{
+  right: 0;
+  box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+
+  .group{
+    flex-direction: column;
+  }
+    
+}
+
+.button-margin{
+  margin-top: 20px;
+}
+
+.downloadText{
+  position: relative;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 10px 8px 10px;
+  text-align: center;
+  background-color: rgb(255, 253, 245);
+  color: rgb(65, 7, 94);
+  font-size: 20px;
+  border-radius: 5px;
+  width: 250px;
+  outline: none;
+  border: none;
+  border-radius: .5em;
+  z-index: 0;
+  box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+}
+
+.downloadText::before{
+
+  content:"" ;
+  position: absolute;
+  top:-2px;
+  left:-3px;
+  padding: 5px;
+  background-size: 600%;
+  background: linear-gradient(
+    45deg,#8b65f4,#b79dff,#b7ceff, #78a2fc);
+  z-index: -1;
+  filter: blur(1px);
+  opacity: 0;
+  inset: 0;
+  border-radius: .5em;
+  transition: opacity .3s ease-in-out;
+  animation: glowing 20s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.downloadText:hover{
+  color: rgb(85, 20, 115);
+  font-weight: bold;
+}
+
+.downloadText:hover::before{
+  opacity: 1;
+}
+
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.downloadText:active::after{
+  background: transparent;
+}
+
+.downloadText:active{
+  color: rgb(85, 20, 115);
+  font-weight: bold;
+}
+
+
+#buttondownload {
+ 
+  color: #b7ceff;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0;
+}
+
+#buttondownload .material-symbols-outlined{
+  font-size: 40px !important;
+}
+
+#download-img:hover {
+  opacity: 0.8;
+}
+
+.download{
+  display: none;
+}
+
+
+
+/*Entourage Mobile fit */
+
+@media screen and (max-width: 480px) {
+
+  body {
+    padding-bottom: 50px !important;
+  }
+
+  .entourage {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 70px auto 0;
+    box-sizing: border-box;
+  }
+
+  .group {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 460px;
+    height: auto;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+
+  .entourage button {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .downloadText {
+    font-size: 16px;
+  }
+
+  #buttondownload .material-symbols-outlined {
+    margin-left:-10px !important;
+    font-size: 40px !important;
+  }
+
+  .button-margin {
+    margin-top: 70px;
+  }
+
+}
