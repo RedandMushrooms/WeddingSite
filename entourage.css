@@ -382,7 +382,6 @@
   border-radius: .5em;
   z-index: 0;
   box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
-  opacity: 1;
 }
 
 .downloadText::before {
@@ -509,12 +508,27 @@
   }
 
   .downloadText {
-    opacity: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+  }
+
+  #buttondownload {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #buttondownload .material-symbols-outlined {
-    margin-left: -10px !important;
-    font-size: 40px !important;
+    margin: 0 !important;
+    font-size: 32px !important;
   }
 
   .button-margin {
