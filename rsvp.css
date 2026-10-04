@@ -1,8 +1,9 @@
-body{
+body {
   background: rgb(235, 198, 212);
   min-height: 100vh;
   margin: 0;
 }
+
 /* Header content */
 
 .header {
@@ -11,7 +12,7 @@ body{
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: row;
-  align-items:start;
+  align-items: start;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -57,7 +58,7 @@ body{
   margin-right: 40px;
 }
 
-.hamburger{
+.hamburger {
   color: rgb(65, 7, 94);
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -67,115 +68,128 @@ body{
   display: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 /* Header responsive mobile screens */
 
-@media screen and (max-width: 480px) and (orientation: portrait){
+@media screen and (max-width: 480px) and (orientation: portrait) {
 
-  .header{
+  .header {
     padding: 5px 15px;
     align-items: center;
   }
-  
-  .header-title-text{
-    margin-left:0;
+
+  .header-title-text {
+    margin-left: 0;
     font-size: 20px;
   }
-  .hamburger{
+
+  .hamburger {
     display: block;
   }
-.header-content{
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 25px;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  border-radius: 8px;
- background: rgba(255, 255, 255, 0.95);
- box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
-}
-.header-content.active{
-  display: flex;
-}
- .home-button,
- .rsvp-navigation,
- .entourage-button {
-  padding: 3px 5px;
-  font-size: 18px;
- }
- .entourage-button{
-  margin-right: 0;
- }
+
+  .header-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active {
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
+    font-size: 18px;
+  }
+
+  .entourage-button {
+    margin-right: 0;
+  }
 }
 
 /*Smaller Phone */
 
-@media screen and (max-width: 380px) and (orientation: portrait){
- .header{
-  padding: 5px 10px;
- } 
+@media screen and (max-width: 380px) and (orientation: portrait) {
+  .header {
+    padding: 5px 10px;
+  }
 
- .header-title-text{
-  font-size: 12px;
- }
- .hamburger{
-  font-size: 24px;
- }
+  .header-title-text {
+    font-size: 12px;
+  }
 
- .header-content{
-  right: 10px;
- }
+  .hamburger {
+    font-size: 24px;
+  }
+
+  .header-content {
+    right: 10px;
+  }
 }
 
 /* Tablet */
 
-@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
- .header{
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+  .header {
     padding: 5px 15px;
     align-items: center;
   }
-  
-  .header-title-text{
-    margin-left:0;
+
+  .header-title-text {
+    margin-left: 0;
     font-size: 22px;
   }
-  .hamburger{
+
+  .hamburger {
     display: block;
   }
-.header-content{
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 25px;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  border-radius: 8px;
- background: rgba(255, 255, 255, 0.95);
- box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
-}
-.header-content.active{
-  display: flex;
-}
- .home-button,
- .rsvp-navigation,
- .entourage-button {
-  padding: 3px 5px;
-  font-size: 20px;
- }
- .entourage-button{
-  margin-right: 0;
- }
-}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
-  .header-title-text{
+  .header-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active {
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
     font-size: 20px;
   }
+
+  .entourage-button {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .header-title-text {
+    font-size: 20px;
+  }
+
   .home-button,
   .entourage-button,
-  .rsvp-navigation{
+  .rsvp-navigation {
     font-size: 20px;
   }
 }
@@ -183,7 +197,7 @@ body{
 /* Music Button*/
 .music-btn {
   position: fixed !important;
-  bottom: 20px !important;
+  bottom: 15px !important;
   right: 20px !important;
   width: 50px;
   height: 50px;
@@ -225,9 +239,11 @@ body{
   0% {
     box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(95, 17, 88, 0.6);
   }
+
   100% {
     box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
   }
@@ -241,7 +257,7 @@ body{
     bottom: 15px;
     right: 15px;
   }
-  
+
   .music-btn svg {
     width: 22px;
     height: 22px;
@@ -255,7 +271,7 @@ body{
     bottom: 12px;
     right: 12px;
   }
-  
+
   .music-btn svg {
     width: 18px;
     height: 18px;
@@ -285,13 +301,14 @@ body{
   margin-top: auto;
 }
 
-.heading__title p{
+.heading__title p {
   margin: 0;
   font-size: 23px;
   color: rgb(123, 122, 122);
   font-family: "Montserrat", sans-serif;
   letter-spacing: -1.3px;
 }
+
 .questionnaire {
   text-align: center;
   width: 100%;
@@ -311,42 +328,43 @@ body{
 @media screen and (max-width: 480px) {
 
   .heading__title {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-  overflow: hidden;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .heading__title h1 {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 10px auto;
+    margin-top: auto;
+  }
+
+  .heading__title p {
+    font-size: 20px;
+  }
+
+  .questionnaire {
+    text-align: center;
+    width: 85%;
+    height: 500px;
+    max-width: 500px;
+    margin-bottom: 2em;
+    box-shadow: inset 0px 0px 30px rgba(65, 7, 94, 0.3);
+    border-radius: 16px;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.heading__title h1 {
-  font-weight: 500;
-  font-size: 25px;
-  margin-bottom: 10px auto;
-  margin-top: auto;
-}
-
-.heading__title p{
-  font-size: 20px;
-}
-
-.questionnaire {
-  text-align: center;
-  width: 85%;
-  height: 500px;
-  max-width: 500px;
-  margin-bottom: 2em;
-  box-shadow: inset 0px 0px 30px rgba(65, 7, 94, 0.3);
-  border-radius: 16px;
-  padding: 1em;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-}
-}
 @media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
 
   .heading__title {

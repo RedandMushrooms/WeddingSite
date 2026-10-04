@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background:rgb(206, 168, 182);
+  background: rgb(206, 168, 182);
 }
 
 /* Header content */
@@ -12,7 +12,7 @@ body {
   backdrop-filter: blur(2px);
   display: flex;
   flex-direction: row;
-  align-items:start;
+  align-items: start;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -58,7 +58,7 @@ body {
   margin-right: 40px;
 }
 
-.hamburger{
+.hamburger {
   color: rgb(65, 7, 94);
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -71,113 +71,125 @@ body {
 
 /* Header responsive mobile screens */
 
-@media screen and (max-width: 480px) and (orientation: portrait){
+@media screen and (max-width: 480px) and (orientation: portrait) {
 
-  .header{
+  .header {
     padding: 5px 15px;
     align-items: center;
   }
-  
-  .header-title-text{
-    margin-left:0;
+
+  .header-title-text {
+    margin-left: 0;
     font-size: 20px;
   }
-  .hamburger{
+
+  .hamburger {
     display: block;
   }
-.header-content{
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 25px;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  border-radius: 8px;
- background: rgba(255, 255, 255, 0.95);
- box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
- }
-.header-content.active{
-  display: flex;
-}
- .home-button,
- .rsvp-navigation,
- .entourage-button {
-  padding: 3px 5px;
-  font-size: 18px;
- }
- .entourage-button{
-  margin-right: 0;
- }
+
+  .header-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active {
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
+    font-size: 18px;
+  }
+
+  .entourage-button {
+    margin-right: 0;
+  }
 }
 
 /*Smaller Phone */
 
-@media screen and (max-width: 380px) and (orientation: portrait){
- .header{
-  padding: 5px 10px;
- } 
+@media screen and (max-width: 380px) and (orientation: portrait) {
+  .header {
+    padding: 5px 10px;
+  }
 
- .header-title-text{
-  font-size: 12px;
- }
- .hamburger{
-  font-size: 24px;
- }
+  .header-title-text {
+    font-size: 12px;
+  }
 
- .header-content{
-  right: 10px;
- }
+  .hamburger {
+    font-size: 24px;
+  }
+
+  .header-content {
+    right: 10px;
+  }
 }
 
 /* Tablet */
 
-@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
- .header{
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+  .header {
     padding: 5px 15px;
     align-items: center;
   }
-  
-  .header-title-text{
-    margin-left:0;
+
+  .header-title-text {
+    margin-left: 0;
     font-size: 22px;
   }
-  .hamburger{
+
+  .hamburger {
     display: block;
   }
-.header-content{
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 25px;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  border-radius: 8px;
- background: rgba(255, 255, 255, 0.95);
- box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
- }
-.header-content.active{
-  display: flex;
-}
- .home-button,
- .rsvp-navigation,
- .entourage-button {
-  padding: 3px 5px;
-  font-size: 20px;
- }
- .entourage-button{
-  margin-right: 0;
- }
-}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
-  .header-title-text{
+  .header-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(85, 20, 115, 0.3);
+  }
+
+  .header-content.active {
+    display: flex;
+  }
+
+  .home-button,
+  .rsvp-navigation,
+  .entourage-button {
+    padding: 3px 5px;
     font-size: 20px;
   }
+
+  .entourage-button {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .header-title-text {
+    font-size: 20px;
+  }
+
   .home-button,
   .entourage-button,
-  .rsvp-navigation{
+  .rsvp-navigation {
     font-size: 20px;
   }
 }
@@ -186,7 +198,7 @@ body {
 /* Music Button*/
 .music-btn {
   position: fixed !important;
-  bottom: 20px !important;
+  bottom: 15px !important;
   right: 20px !important;
   width: 50px;
   height: 50px;
@@ -228,9 +240,11 @@ body {
   0% {
     box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(95, 17, 88, 0.6);
   }
+
   100% {
     box-shadow: 0 0 15px rgba(95, 17, 88, 0.3);
   }
@@ -244,7 +258,7 @@ body {
     bottom: 15px;
     right: 15px;
   }
-  
+
   .music-btn svg {
     width: 22px;
     height: 22px;
@@ -258,7 +272,7 @@ body {
     bottom: 12px;
     right: 12px;
   }
-  
+
   .music-btn svg {
     width: 18px;
     height: 18px;
@@ -305,18 +319,18 @@ body {
   margin-top: none;
 }
 
-.banner__wording__container h1{
+.banner__wording__container h1 {
   transform: translateY(-25px);
   font-weight: 500;
   font-size: 30px;
-   color: rgb(99, 98, 98);
+  color: rgb(99, 98, 98);
   text-shadow:
     inset 2px 2px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
   margin-top: 40px;
 }
 
-.banner__name{
+.banner__name {
   transform: translateY(-10px);
   margin-top: -20px;
   margin-bottom: auto;
@@ -367,7 +381,7 @@ body {
   text-shadow: 0 0 0 10px rgba(0, 0, 0, 1);
 }
 
-.banner__wording{
+.banner__wording {
   margin-top: 25px;
   font-size: 28px;
   margin-bottom: 5px;
@@ -387,143 +401,154 @@ body {
 
 /* Banner Mobile responsive screen*/
 
-@media screen and (max-width: 480px) and (orientation: portrait){
+@media screen and (max-width: 480px) and (orientation: portrait) {
 
-  .banner{
+  .banner {
     padding: 20px 0 10px 0;
     width: 100%;
     aspect-ratio: 2/3;
-   height: auto;
+    height: auto;
     box-sizing: border-box;
 
-   background: url('mobilebanner.webp');
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   background-position: center;
+    background: url('mobilebanner.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
-.banner__container{
-  width: 100%;
-  display: grid;
-  justify-items: center;
-  text-align: center;
-}
-.banner__wording__container{
-  width: 100%;
-  text-align: center;
-}
-.banner__wording__container h1{
-  font-size: 23px;
-}
-.banner__wording__container:first-child{
-transform: translateY(-50px);
-}
-.banner__wording__container:last-child{
-  transform: translateY(50px);
-}
-.banner__name{
-font-size: 50px;
-}
 
-.banner__button{
- width: 100%;
- display: flex;
- flex-direction: row;
- justify-content: center;
- gap: 50px;
- box-sizing: border-box;
- transform: translateY(-32px);
-}
+  .banner__container {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
 
-.button__rsvp,
-.button__entourage{
-  font-size: 16px;
-}
-.banner__wording,
-.banner__verse{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: 18px;
-}
+  .banner__wording__container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner__wording__container h1 {
+    font-size: 23px;
+  }
+
+  .banner__wording__container:first-child {
+    transform: translateY(-50px);
+  }
+
+  .banner__wording__container:last-child {
+    transform: translateY(50px);
+  }
+
+  .banner__name {
+    font-size: 50px;
+  }
+
+  .banner__button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    box-sizing: border-box;
+    transform: translateY(-32px);
+  }
+
+  .button__rsvp,
+  .button__entourage {
+    font-size: 16px;
+  }
+
+  .banner__wording,
+  .banner__verse {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+  }
 }
 
 
 /*Smaller Phone */
 
-@media screen and (max-width: 380px) and (orientation: portrait){
- 
-}
+@media screen and (max-width: 380px) and (orientation: portrait) {}
 
-@media screen and (max-width: 667px) and (orientation: landscape){
-  
-}
+@media screen and (max-width: 667px) and (orientation: landscape) {}
 
 /* Tablet */
 
-@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
 
-   .banner{
+  .banner {
     padding: 20px 0 10px 0;
     width: 100%;
     aspect-ratio: 2/3;
-   height: auto;
+    height: auto;
     box-sizing: border-box;
 
-   background: url('mobilebanner.webp');
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   background-position: center;
+    background: url('mobilebanner.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
-.banner__container{
-  width: 100%;
-  display: grid;
-  justify-items: center;
-  text-align: center;
-}
-.banner__wording__container{
-  width: 100%;
-  text-align: center;
-}
 
-.banner__wording__container h1{
-  font-size: 40px;
-}  
-.banner__wording__container:first-child{
-transform: translateY(-200px);
-}
-.banner__wording__container:last-child{
-  transform: translateY(100px);
-}
-.banner__name{
-font-size: 90px;
-margin-top: 30px;
-}
+  .banner__container {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
 
-.banner__button{
- width: 100%;
- display: flex;
- flex-direction: row;
- justify-content: center;
- gap: 150px;
- font-size:100px;
- transform: translateY(-120px);
-}
-.banner__wording,
-.banner__verse{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.banner__wording{
-  font-size: 29px;
-  margin-bottom: 10px;
-}
-.banner__verse{
-  font-size: 23px;
-  
-}
+  .banner__wording__container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner__wording__container h1 {
+    font-size: 40px;
+  }
+
+  .banner__wording__container:first-child {
+    transform: translateY(-200px);
+  }
+
+  .banner__wording__container:last-child {
+    transform: translateY(100px);
+  }
+
+  .banner__name {
+    font-size: 90px;
+    margin-top: 30px;
+  }
+
+  .banner__button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 150px;
+    font-size: 100px;
+    transform: translateY(-120px);
+  }
+
+  .banner__wording,
+  .banner__verse {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .banner__wording {
+    font-size: 29px;
+    margin-bottom: 10px;
+  }
+
+  .banner__verse {
+    font-size: 23px;
+
+  }
 }
 
 
@@ -548,30 +573,32 @@ margin-top: 30px;
   box-sizing: border-box;
 }
 
-.wedding__container h1.s-l-header{
-   color: rgb(95, 17, 88);
+.wedding__container h1.s-l-header {
+  color: rgb(95, 17, 88);
   text-shadow:
     inset 2px 2px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-   font-family: "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 500;
   font-size: 38px;
 }
 
-.about__par{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: auto;
+.about__par {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
-.about__par__description{
+
+.about__par__description {
   font-size: 20px;
   letter-spacing: -1px;
-   color: rgb(123, 122, 122);
-    margin-top: -15px;
-   font-family: "Montserrat", sans-serif;
+  color: rgb(123, 122, 122);
+  margin-top: -15px;
+  font-family: "Montserrat", sans-serif;
 }
+
 .event__container {
   display: flex;
   flex-direction: row;
@@ -646,14 +673,14 @@ margin: auto;
   margin: 0 5px 8px 0;
   font-size: 1.3rem;
   font-weight: bold;
-  color:black;
+  color: black;
   line-height: 20px;
 }
 
 .location__container p {
   text-align: center;
   align-items: center;
-  color:rgb(95, 17, 88);
+  color: rgb(95, 17, 88);
   font-size: 1.3rem;
 }
 
@@ -667,14 +694,16 @@ margin: auto;
   margin: auto;
   margin-bottom: .3em;
   padding: 0;
-  color:rgb(161, 79, 121);
+  color: rgb(161, 79, 121);
   display: block;
   text-align: center;
 }
-.calendar__button{
+
+.calendar__button {
   margin-left: auto;
   margin-right: auto;
 }
+
 .calendar__button,
 .open__location {
   font-size: 1.35rem;
@@ -683,7 +712,7 @@ margin: auto;
   border: none;
   border-radius: .5em;
   color: rgb(255, 255, 255);
-  background-color:rgb(161, 79, 121);
+  background-color: rgb(161, 79, 121);
   text-align: center;
   padding: 8px 12px;
   margin: auto;
@@ -732,9 +761,11 @@ margin: auto;
   0% {
     background-position: 0 0;
   }
+
   50% {
     background-position: 400% 0;
   }
+
   100% {
     background-position: 0 0;
   }
@@ -758,37 +789,37 @@ margin: auto;
 
 /*About Wedding responsive screen */
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
 
-  .about__wedding{
+  .about__wedding {
     width: 95%;
     max-width: 100%;
   }
 
   .wedding__container {
-   width: fit-content;
-   max-width: 100%;
-   margin: 0 auto;
-   box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   /* CHANGED: Schedule & Location */
-  .wedding__container h1.s-l-header{
+  .wedding__container h1.s-l-header {
     font-size: 35px;
   }
 
-  .about__par__description{
+  .about__par__description {
     font-size: 15px;
   }
 
-  .event__container{
+  .event__container {
     flex-direction: column;
     align-items: center;
     gap: .9em;
     width: 100%;
     max-width: 100%;
   }
-  
+
   .event__date__container,
   .event__location__container {
     max-width: 450px;
@@ -799,24 +830,24 @@ margin: auto;
   }
 
   .date__container,
-  .location__container{
+  .location__container {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
   }
 
-  .date__container p{
+  .date__container p {
     font-size: .9rem;
   }
 
   .calendar__button,
-  .open__location{
+  .open__location {
     font-size: 1rem;
   }
 
   /* CHANGED: Ceremony & Reception */
-  .location__container h1{
+  .location__container h1 {
     font-size: 15px;
   }
 }
@@ -824,22 +855,22 @@ margin: auto;
 
 /*Smaller Phone */
 
-@media screen and (max-width: 380px) and (orientation: portrait){
- 
-  .about__wedding{
+@media screen and (max-width: 380px) and (orientation: portrait) {
+
+  .about__wedding {
     width: 95%;
   }
 
-  .wedding__container{
+  .wedding__container {
     padding: 10px;
   }
 
-  .wedding__container h1{
+  .wedding__container h1 {
     font-size: 22px;
   }
 
   .date__container,
-  .location__container{
+  .location__container {
     font-size: .9rem;
   }
 
@@ -847,40 +878,38 @@ margin: auto;
     font-size: .9rem;
   }
 
-  .location__container p{
+  .location__container p {
     font-size: .9rem;
   }
 
 }
 
-@media screen and (max-width: 667px) and (orientation: landscape){
-  
-}
+@media screen and (max-width: 667px) and (orientation: landscape) {}
 
 /* Tablet */
 
-@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait){
+@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
 
-  .about__wedding{
+  .about__wedding {
     width: 100%;
     max-width: 100%;
   }
 
   .wedding__container {
-   width: fit-content;
-   max-width: 100%;
-   margin: 0 auto;
-   box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  .event__container{
+  .event__container {
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
     width: 100%;
     max-width: 100%;
   }
-  
+
   .event__date__container,
   .event__location__container {
     max-width: 450px;
@@ -891,18 +920,16 @@ margin: auto;
   }
 
   .date__container,
-  .location__container{
+  .location__container {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
   }
-  
+
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape){
-  
-}
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {}
 
 /*gallery*/
 
@@ -926,21 +953,21 @@ margin: auto;
 }
 
 .inner__container h1 {
- font-weight: 500;
+  font-weight: 500;
   font-size: 38px;
-   font-family: "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
   color: rgb(95, 17, 88);
   margin-bottom: 20px;
   display: block;
 }
 
 
-.gallery__par__description{
+.gallery__par__description {
   font-size: 20px;
   letter-spacing: -1px;
-   color: rgb(123, 122, 122);
-    margin-top: -15px;
-   font-family: "Montserrat", sans-serif;
+  color: rgb(123, 122, 122);
+  margin-top: -15px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .gallery {
@@ -972,7 +999,7 @@ margin: auto;
   }
 }
 
-@media screen and (max-width: 768px) and (min-width:481px){
+@media screen and (max-width: 768px) and (min-width:481px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -981,12 +1008,14 @@ margin: auto;
 @media screen and (max-width: 480px) {
 
   /* CHANGED: Our Story */
-  .inner__container h1{
+  .inner__container h1 {
     font-size: 35px;
   }
-  .gallery__par__description{
+
+  .gallery__par__description {
     font-size: 15px;
   }
+
   .gallery {
     grid-template-columns: 1fr;
   }
@@ -1001,7 +1030,7 @@ margin: auto;
   align-items: center;
   gap: 15px;
   margin: 30px auto;
-  background-color: rgba(161, 79, 121,0.8);
+  background-color: rgba(161, 79, 121, 0.8);
   border-radius: 8px;
   width: fit-content;
   box-sizing: border-box;
@@ -1045,13 +1074,14 @@ margin: auto;
   background-color: rgb(206, 168, 182);
   border-radius: 8px;
 }
+
 .countdown-box small {
   display: block;
   font-size: 18px;
   color: white;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:480px) {
   .countdown {
     width: calc(100% - 20px);
     max-width: 100%;
@@ -1060,7 +1090,7 @@ margin: auto;
     overflow: hidden;
   }
 
-  .countdown h1{
+  .countdown h1 {
     font-size: 25px;
     max-width: 100%;
   }
@@ -1078,7 +1108,7 @@ margin: auto;
     box-sizing: border-box;
   }
 
-  .countdown-box span{
+  .countdown-box span {
     width: 100%;
     font-size: 30px;
     box-sizing: border-box;
