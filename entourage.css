@@ -201,7 +201,7 @@
 /* Music Button*/
 .music-btn {
   position: fixed !important;
-  bottom: 20px !important;
+  bottom: 15px !important;
   right: 20px !important;
   width: 50px;
   height: 50px;
@@ -382,6 +382,7 @@
   border-radius: .5em;
   z-index: 0;
   box-shadow: 0 0 10px rgba(85, 20, 115, 0.5);
+  opacity: 1;
 }
 
 .downloadText::before {
@@ -513,7 +514,7 @@
 
   #buttondownload .material-symbols-outlined {
     margin-left: -10px !important;
-    font-size: 20px !important;
+    font-size: 40px !important;
   }
 
   .button-margin {
