@@ -1142,7 +1142,7 @@ body {
     padding: 15px 10px;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 20px auto;
+    margin: -10px auto;
   }
 
   .countdown h1 {
