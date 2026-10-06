@@ -269,7 +269,7 @@ body {
   .music-btn {
     width: 36px;
     height: 36px;
-    bottom: -20px !important;
+    bottom: 15px;
     right: 12px;
   }
 
@@ -1065,6 +1065,10 @@ body {
     right: 5%;
   }
 
+  .fullscreen {
+    padding: 5px;
+  }
+
   #fullscreenImage {
     max-width: 90%;
     max-height: 100%;
@@ -1138,6 +1142,7 @@ body {
     padding: 15px 10px;
     box-sizing: border-box;
     overflow: hidden;
+    margin: 20px auto;
   }
 
   .countdown h1 {
