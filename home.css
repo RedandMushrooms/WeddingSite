@@ -269,7 +269,7 @@ body {
   .music-btn {
     width: 36px;
     height: 36px;
-    bottom: -20px;
+    bottom: -20px !important;
     right: 12px;
   }
 
