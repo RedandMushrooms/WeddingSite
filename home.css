@@ -1061,9 +1061,16 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .fullscreen {
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 8px;
+  }
+
   .screen-close {
     top: 7%;
-    right: 5%;
+    right: 8%;
   }
 
   #fullscreenImage {
@@ -1134,7 +1141,7 @@ body {
 
 @media screen and (max-width:480px) {
   body {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 
   .countdown {
