@@ -1062,12 +1062,12 @@ body {
 
   .screen-close {
     top: 7%;
-    right: 10%;
+    right: 5%;
   }
 
   #fullscreenImage {
-    max-width: 80%;
-    max-height: 95%;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
