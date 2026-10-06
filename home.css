@@ -1059,6 +1059,16 @@ body {
   .gallery {
     grid-template-columns: 1fr;
   }
+
+  .screen-close {
+    top: 7%;
+    right: 10%;
+  }
+
+  #fullscreenImage {
+    max-width: 80%;
+    max-height: 95%;
+  }
 }
 
 /*COUNTDOWN */
@@ -1157,6 +1167,8 @@ body {
   .countdown-box small {
     font-size: 16px;
   }
+
+
 }
 
 @media screen and (max-width:780px) and (min-width:481px) {
