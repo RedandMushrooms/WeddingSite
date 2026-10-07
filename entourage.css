@@ -602,15 +602,31 @@
     margin-top: 70px;
   }
 
-  .fullscreen {
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 8px;
-  }
-
   .screen-close {
     top: 7%;
     right: 8%;
+  }
+
+  #fullscreenImage {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+  }
+
+  .fullscreen .prev,
+  .fullscreen .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10001;
+  }
+
+  .fullscreen .prev {
+    left: 10px;
+  }
+
+  .fullscreen .next {
+    right: 10px;
   }
 }
