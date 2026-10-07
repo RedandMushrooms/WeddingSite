@@ -99,10 +99,10 @@ function flip(direction) {
   }
 }
 
-function prevSlide() {
+function fullscreenprevSlide() {
   flip(-1);
 }
 
-function nextSlide() {
+function fullscreennextSlide() {
   flip(1);
 }
