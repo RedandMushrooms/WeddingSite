@@ -48,10 +48,12 @@ function flip(direction) {
 
   }
 
-  // Get the exact position of the current image on the screen
+  // Get the exact position of the current image
   const rect = image.getBoundingClientRect();
 
-  const newImage = document.createElement("img");
+  const newImage = image.cloneNode();
+
+  newImage.src = cards[index].src;
 
   newImage.style.position = "fixed";
 
@@ -73,7 +75,7 @@ function flip(direction) {
 
   newImage.style.boxShadow = "1px 1px 10px -5px black";
 
-  newImage.style.zIndex = "10002";
+  newImage.style.zIndex = "10001";
 
   newImage.style.clipPath =
     direction > 0
@@ -82,43 +84,21 @@ function flip(direction) {
 
   newImage.style.transition = "clip-path 1s ease";
 
-  let started = false;
+  image.parentElement.appendChild(newImage);
 
-  function startAnimation() {
+  newImage.offsetWidth;
 
-    if (started) return;
+  newImage.style.clipPath = "inset(0)";
 
-    started = true;
+  setTimeout(() => {
 
-    fullscreen.appendChild(newImage);
+    image.src = newImage.src;
 
-    newImage.offsetWidth;
+    newImage.remove();
 
-    newImage.style.clipPath = "inset(0)";
+    animating = false;
 
-    setTimeout(() => {
-
-      image.src = newImage.src;
-
-      newImage.remove();
-
-      animating = false;
-
-    }, 1000);
-
-  }
-
-  // Wait until the new image has loaded
-  newImage.onload = startAnimation;
-
-  newImage.src = cards[index].src;
-
-  // Handles already-cached images
-  if (newImage.complete) {
-
-    startAnimation();
-
-  }
+  }, 1000);
 
 }
 
