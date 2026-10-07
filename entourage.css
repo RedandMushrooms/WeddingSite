@@ -365,7 +365,7 @@
   position: static;
   transform: none;
   flex-shrink: 0;
-  z-index: 10003 !important;
+  z-index: 10001 !important;
 }
 
 .fullscreen .prev {
@@ -642,11 +642,11 @@
 
   .fullscreen .prev {
     left: 12px;
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .fullscreen .next {
     right: 12px;
-    font-size: 16px;
+    font-size: 12px;
   }
 }
