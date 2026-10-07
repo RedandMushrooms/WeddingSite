@@ -515,6 +515,8 @@
 #fullscreenImage {
   max-width: 70vw;
   max-height: 85vh;
+  width: auto;
+  height: auto;
   border-radius: 4px;
   box-shadow: 1px 1px 10px -5px black;
   object-fit: contain;
@@ -619,6 +621,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10001;
+  }
+
+  .fullscreen .prev,
+  .fullscreen .next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10001;
     z-index: 10001;
   }
 
