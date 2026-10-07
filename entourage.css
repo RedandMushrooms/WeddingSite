@@ -624,9 +624,11 @@
 
   .fullscreen .prev {
     left: 10px;
+    font-size: 10px;
   }
 
   .fullscreen .next {
     right: 10px;
+    font-size: 10px;
   }
 }
