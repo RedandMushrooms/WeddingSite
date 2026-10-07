@@ -35,7 +35,7 @@ function flip(direction) {
 
   newImage.src = cards[index].src;
 
-  newImage.style.position = "absolute";
+  newImage.style.position = "fixed";
   newImage.style.maxWidth = "70vw";
   newImage.style.maxHeight = "85vh";
   newImage.style.objectFit = "contain";
