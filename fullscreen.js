@@ -35,12 +35,13 @@ function flip(direction) {
 
   newImage.src = cards[index].src;
 
-  newImage.style.position = "fixed";
-  newImage.style.left = "50%";
-  newImage.style.top = "50%";
-  newImage.style.transform = "translate(-50%, -50%)";
-  newImage.style.maxWidth = "90vw";
-  newImage.style.maxHeight = "85vh";
+  newImage.style.position = "absolute";
+  newImage.style.left = image.offsetLeft + "px";
+  newImage.style.top = image.offsetTop + "px";
+  newImage.style.width = image.offsetWidth + "px";
+  newImage.style.height = image.offsetHeight + "px";
+  newImage.style.maxWidth = "none";
+  newImage.style.maxHeight = "none";
   newImage.style.objectFit = "contain";
   newImage.style.borderRadius = "4px";
   newImage.style.boxShadow = "1px 1px 10px -5px black";
