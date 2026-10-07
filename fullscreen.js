@@ -1,66 +1,86 @@
-const galleryImages = document.querySelectorAll('.gallery img');
+const cards = document.querySelectorAll(".group img");
+const fullscreen = document.getElementById("fullscreenContainer");
+const image = document.getElementById("fullscreenImage");
+const close = document.getElementById("screenClose");
 
-const fullscreenContainer = document.getElementById('fullscreenContainer');
+let index = 0;
+let timer;
+let animating = false;
 
-const fullscreenImage = document.getElementById('fullscreenImage');
-
-let liveImageObserver;
-
-const screenClose = document.getElementById('screenClose');
-
-let currentIndex = 0;
-
-galleryImages.forEach((image, index) => {
-  image.addEventListener('click', () => {
-    currentIndex = index;
-
-    fullscreenImage.src = image.src;
-
-    fullscreenContainer.classList.add('active');
-
-    liveImageObserver = new MutationObserver(() => {
-      fullscreenImage.src = image.src;
-    });
-    liveImageObserver.observe(image, { attributes: true, attributeFilter: ['src'] });
-  });
+cards.forEach((card, i) => {
+  card.onclick = () => {
+    index = i;
+    image.src = card.src;
+    fullscreen.classList.add("active");
+    start();
+  };
 });
 
-function showFullscreenImage(index) {
-  if (index >= galleryImages.length) {
-    currentIndex = 0;
-  } else if (index < 0) {
-    currentIndex = galleryImages.length - 1;
-  } else {
-    currentIndex = index;
+function flip(direction) {
+  if (animating) return;
+
+  animating = true;
+
+  index += direction;
+
+  if (index >= cards.length) {
+    index = 0;
   }
-  fullscreenImage.src = galleryImages[currentIndex].src;
+
+  if (index < 0) {
+    index = cards.length - 1;
+  }
+
+  const newImage = image.cloneNode();
+
+  newImage.src = cards[index].src;
+
+  newImage.style.position = "absolute";
+  newImage.style.maxWidth = "70vw";
+  newImage.style.maxHeight = "85vh";
+  newImage.style.objectFit = "contain";
+  newImage.style.borderRadius = "4px";
+  newImage.style.boxShadow = "1px 1px 10px -5px black";
+
+  newImage.style.clipPath =
+    direction > 0
+      ? "inset(0 0 0 100%)"
+      : "inset(0 100% 0 0)";
+
+  newImage.style.transition = "clip-path 1s ease";
+
+  image.parentElement.appendChild(newImage);
+
+  newImage.offsetWidth;
+
+  newImage.style.clipPath = "inset(0)";
+
+  setTimeout(() => {
+    image.src = newImage.src;
+    newImage.remove();
+    animating = false;
+  }, 1000);
 }
 
-let startX = 0;
+function start() {
+  clearInterval(timer);
 
-fullscreenContainer.addEventListener('touchstart', (event) => {
-  startX = event.touches[0].clientX;
-});
+  timer = setInterval(() => {
+    flip(1);
+  }, 10000);
+}
 
-fullscreenContainer.addEventListener('touchend', (event) => {
-  const endX = event.changedTouches[0].clientX;
-  const difference = startX - endX;
+fullscreen.querySelector(".next").onclick = () => {
+  flip(1);
+  start();
+};
 
-  if (Math.abs(difference) > 50) {
-    if (difference > 0) {
-      showFullscreenImage(currentIndex + 1);
-    } else {
-      showFullscreenImage(currentIndex - 1);
-    }
-  }
-});
+fullscreen.querySelector(".prev").onclick = () => {
+  flip(-1);
+  start();
+};
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'ArrowRight') {
-    showFullscreenImage(currentIndex + 1);
-  }
-});
-
-screenClose.addEventListener('click', () => {
-  fullscreenContainer.classList.remove('active');
-});
+close.onclick = () => {
+  fullscreen.classList.remove("active");
+  clearInterval(timer);
+};
