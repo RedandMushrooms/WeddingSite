@@ -631,6 +631,8 @@
     transform: translateY(-50%);
     z-index: 10001;
     z-index: 10001;
+    background-color: transparent;
+    color: white;
   }
 
   .fullscreen .prev {
