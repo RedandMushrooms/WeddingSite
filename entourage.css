@@ -710,6 +710,7 @@
     top: calc(50% - 45vh);
     right: 10px;
     margin: 0;
+    margin-right: 5px;
     transform: none;
     z-index: 10005;
   }
@@ -734,7 +735,7 @@
   .fullscreen-close {
     position: fixed;
     top: 8%;
-    right: 20%;
+    right: 10%;
     margin: 0;
     transform: none;
     z-index: 10005;
