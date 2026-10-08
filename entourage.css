@@ -734,7 +734,7 @@
   .fullscreen-close {
     position: fixed;
     top: 8%;
-    right: 10%;
+    right: 20%;
     margin: 0;
     transform: none;
     z-index: 10005;
