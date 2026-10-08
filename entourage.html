@@ -72,16 +72,20 @@
     </p>
   </div>
 
-  <!--Full screen Gallery-->
   <div id="fullscreenContainer" class="fullscreen">
     <div class="fullscreen-content">
+      <div class="fullscreen-tools">
+        <button class="zoom-minus" onclick="zoomOut()">&minus;</button>
+        <button class="zoom-plus" onclick="zoomIn()">&plus;</button>
+      </div>
       <button class="prev" onclick="fullScreenPrevSlide()">&#10094</button>
       <img id="fullscreenImage" src="" alt="">
       <button class="next" onclick="fullScreenNextSlide()">&#10095</button>
+      <div class="fullscreen-close">
+        <button id="screenClose" class="screen-close">&#x2715;</button>
+      </div>
     </div>
-    <button id="screenClose" class="screen-close">&#x2715;</button>
   </div>
-
 
   <script src="download.js"></script>
   <script src="entourage.js"></script>

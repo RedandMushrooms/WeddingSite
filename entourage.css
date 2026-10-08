@@ -522,14 +522,54 @@
   box-shadow: 1px 1px 10px -5px black;
   object-fit: contain;
   transition: clip-path 1s ease;
+  --zoom: 1;
+  --pan-x: 0px;
+  --pan-y: 0px;
+  touch-action: none;
+  user-select: none;
+  transform: translate(var(--pan-x), var(--pan-y)) scale(var(--zoom));
+}
+
+.fullscreen-close {
+  transform: translateY(-15em);
+  flex-direction: column;
+  margin-left: -40px;
+}
+
+.fullscreen-tools {
+  margin-right: -35px;
+  transform: translateY(-80px);
+  gap: 5px;
+  flex-direction: row;
+}
+
+.fullscreen-tools,
+.fullscreen-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 10005;
+}
+
+.zoom-plus,
+.zoom-minus {
+  font-size: 25px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  z-index: 10005;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  /* padding: 5px 10px;*/
+  border: none;
+  width: 40px;
+  height: 50px;
 }
 
 .screen-close {
-  position: absolute;
-  top: 7%;
-  right: 20%;
   font-size: 25px;
   background: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   color: white;
   cursor: pointer;
   z-index: 10004;
@@ -607,7 +647,7 @@
 
   .screen-close {
     top: 7%;
-    right: 8%;
+    right: 5%;
   }
 
   #fullscreenImage {
@@ -618,7 +658,8 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(calc(-50% + var(--pan-x)),
+        calc(-50% + var(--pan-y))) scale(var(--zoom));
   }
 
   .fullscreen .prev,

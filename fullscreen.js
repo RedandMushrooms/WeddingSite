@@ -106,3 +106,182 @@ function fullScreenPrevSlide() {
 function fullScreenNextSlide() {
   flip(1);
 }
+
+let zoomLevel = 1;
+let panX = 0;
+let panY = 0;
+
+function updateZoom() {
+  image.style.setProperty("--zoom", zoomLevel);
+  image.style.setProperty("--pan-x", panX + "px");
+  image.style.setProperty("--pan-y", panY + "px");
+}
+
+function zoomIn() {
+  zoomLevel += 0.25;
+
+  if (zoomLevel > 10) {
+    zoomLevel = 10;
+  }
+
+  updateZoom();
+}
+
+function zoomOut() {
+  zoomLevel -= 0.25;
+
+  if (zoomLevel < 1) {
+    zoomLevel = 1;
+    panX = 0;
+    panY = 0;
+  }
+
+  updateZoom();
+}
+
+
+let dragging = false;
+let startX = 0;
+let startY = 0;
+let startPanX = 0;
+let startPanY = 0;
+
+let pinchStartDistance = 0;
+let pinchStartZoom = 1;
+
+
+function getDistance(touch1, touch2) {
+  const x = touch2.clientX - touch1.clientX;
+  const y = touch2.clientY - touch1.clientY;
+
+  return Math.sqrt(x * x + y * y);
+}
+
+
+image.addEventListener("pointerdown", (event) => {
+  if (event.pointerType === "touch") {
+    return;
+  }
+
+  if (zoomLevel <= 1) {
+    return;
+  }
+
+  dragging = true;
+
+  startX = event.clientX;
+  startY = event.clientY;
+
+  startPanX = panX;
+  startPanY = panY;
+
+  image.setPointerCapture(event.pointerId);
+});
+
+
+image.addEventListener("pointermove", (event) => {
+  if (!dragging) {
+    return;
+  }
+
+  panX = startPanX + (event.clientX - startX);
+  panY = startPanY + (event.clientY - startY);
+
+  updateZoom();
+});
+
+
+image.addEventListener("pointerup", (event) => {
+  dragging = false;
+
+  if (image.hasPointerCapture(event.pointerId)) {
+    image.releasePointerCapture(event.pointerId);
+  }
+});
+
+
+image.addEventListener("pointercancel", () => {
+  dragging = false;
+});
+
+
+image.addEventListener("touchstart", (event) => {
+  event.preventDefault();
+
+  if (event.touches.length === 1) {
+    dragging = true;
+
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+
+    startPanX = panX;
+    startPanY = panY;
+  }
+
+  if (event.touches.length === 2) {
+    dragging = false;
+
+    pinchStartDistance = getDistance(
+      event.touches[0],
+      event.touches[1]
+    );
+
+    pinchStartZoom = zoomLevel;
+  }
+}, { passive: false });
+
+
+image.addEventListener("touchmove", (event) => {
+  event.preventDefault();
+
+  if (event.touches.length === 1 && dragging) {
+    panX = startPanX + (event.touches[0].clientX - startX);
+    panY = startPanY + (event.touches[0].clientY - startY);
+
+    updateZoom();
+  }
+
+  if (event.touches.length === 2) {
+    const currentDistance = getDistance(
+      event.touches[0],
+      event.touches[1]
+    );
+
+    const scale = currentDistance / pinchStartDistance;
+
+    zoomLevel = pinchStartZoom * scale;
+
+    if (zoomLevel > 10) {
+      zoomLevel = 10;
+    }
+
+    if (zoomLevel < 1) {
+      zoomLevel = 1;
+      panX = 0;
+      panY = 0;
+    }
+
+    updateZoom();
+  }
+}, { passive: false });
+
+
+image.addEventListener("touchend", (event) => {
+  if (event.touches.length === 0) {
+    dragging = false;
+  }
+
+  if (event.touches.length === 1) {
+    dragging = true;
+
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+
+    startPanX = panX;
+    startPanY = panY;
+  }
+
+  if (event.touches.length < 2) {
+    pinchStartDistance = 0;
+  }
+});
