@@ -691,4 +691,17 @@
     right: 12px;
     font-size: 12px;
   }
+
+  .fullscreen-close,
+  .fullscreen-tools {
+    transform: translateY(-16em);
+  }
+
+  .fullscreen-close {
+    margin-right: -10px;
+  }
+
+  .fullscreen-tools {
+    margin-left: -10px;
+  }
 }
